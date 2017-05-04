@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Resumes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Dob</th>
+      <th>Email</th>
+      <th>Contact no</th>
+      <th>Colleg</th>
+      <th>Address</th>
+      <th>Aggrigate</th>
+      <th>Qualification</th>
+      <th>School name</th>
+      <th>Fathers name</th>
+      <th>Mothers name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.name %></td>
+        <td><%= resume.dob %></td>
+        <td><%= resume.email %></td>
+        <td><%= resume.contact_no %></td>
+        <td><%= resume.colleg %></td>
+        <td><%= resume.address %></td>
+        <td><%= resume.aggrigate %></td>
+        <td><%= resume.qualification %></td>
+        <td><%= resume.school_name %></td>
+        <td><%= resume.fathers_name %></td>
+        <td><%= resume.mothers_name %></td>
+        <td><%= link_to 'Show', resume %></td>
+        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
+        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resume', new_resume_path %>
